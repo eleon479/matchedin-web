@@ -1,5 +1,4 @@
 import './App.css';
-import { useEffect } from 'react';
 import Header from './Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cards from './Cards';

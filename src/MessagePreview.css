@@ -1,0 +1,29 @@
+.MessagePreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 70px;
+  border-bottom: 1px solid #fafafa;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.details {
+  flex: 1;
+}
+
+.details > p {
+  color: gray;
+}
+
+.timestamp {
+  color: lightgray;
+}
+
+.profile-pic {
+  margin-right: 20px;
+}

@@ -1,0 +1,36 @@
+:root {
+}
+
+.Controls {
+  position: fixed;
+  bottom: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.Controls .MuiIconButton-root {
+  background-color: white;
+  box-shadow: 0px 10px 53px 0px rgba(0, 0, 0, 0.3) !important;
+}
+
+.undo {
+  padding: 3vw !important;
+  color: #f5b748 !important;
+}
+.reject {
+  padding: 3vw !important;
+  color: #ec5e6f !important;
+}
+.star {
+  padding: 3vw !important;
+  color: #62b4f9 !important;
+}
+.match {
+  padding: 3vw !important;
+  color: #76e2b3 !important;
+}
+.surge {
+  padding: 3vw !important;
+  color: #915dd1 !important;
+}

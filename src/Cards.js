@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import './Cards.css';
-import db from './firebase';
+import { db } from './services/firebase';
 
 function Cards() {
   const [people, setPeople] = useState([]);

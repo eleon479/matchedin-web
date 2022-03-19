@@ -1,29 +1,31 @@
 import { Avatar } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Chat.css';
+import { db } from './services/firebase';
+import { collection, addDoc } from 'firebase/firestore';
 function Chat() {
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState([
-    {
-      name: 'Jared',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/matchedin-43d61.appspot.com/o/images%2Fjared.jpg?alt=media&token=9afebd15-5341-4fc9-8daa-1a8932d73533',
-      message: 'check these out',
-    },
-    {
-      name: 'Jared',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/matchedin-43d61.appspot.com/o/images%2Fjared.jpg?alt=media&token=9afebd15-5341-4fc9-8daa-1a8932d73533',
-      message: 'how goes it',
-    },
-    {
-      message: 'hi!',
-    },
-  ]);
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    db.collection('messages').onSnapshot((snapshot) => {
+      setMessages(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, []);
+
+  async function sendMessage(message) {
+    try {
+      await addDoc(collection(db, 'messages'), {
+        message: message,
+      });
+    } catch (e) {
+      console.error('error adding doc: ', e);
+    }
+  }
 
   const handleSend = (e) => {
     e.preventDefault();
-    setMessages([...messages, { message: input }]);
+    sendMessage(input);
     setInput('');
   };
 

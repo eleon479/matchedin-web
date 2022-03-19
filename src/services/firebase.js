@@ -13,7 +13,6 @@ const firebaseConfig = {
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.firestore();
-const analytics = firebaseApp.analytics();
-
-export default db;
+export const db = firebaseApp.firestore();
+export const analytics = firebaseApp.analytics();
+analytics.setAnalyticsCollectionEnabled(true);

@@ -1,12 +1,6 @@
 import './App.css';
 import Header from './Header';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Outlet,
-} from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 
 function App() {
   return (

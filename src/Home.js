@@ -5,10 +5,7 @@ import Controls from './Controls';
 function Home() {
   return (
     <div>
-      {/* Cards */}
       <Cards />
-
-      {/* Buttons below Cards */}
       <Controls />
     </div>
   );

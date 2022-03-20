@@ -1,13 +1,17 @@
+import { Container } from '@mui/material';
 import React from 'react';
 import Cards from './Cards';
 import Controls from './Controls';
+import './Home.css';
 
 function Home() {
   return (
-    <div>
+    // <Container className="Home" maxWidth="sm">
+    <>
       <Cards />
       <Controls />
-    </div>
+    </>
+    // </Container>
   );
 }
 

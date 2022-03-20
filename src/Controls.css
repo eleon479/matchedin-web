@@ -3,7 +3,10 @@
   bottom: 10vh;
   display: flex;
   justify-content: space-evenly;
+
   width: 100%;
+  max-width: inherit;
+  margin: 0;
 }
 
 .Controls .MuiIconButton-root {
@@ -12,22 +15,22 @@
 }
 
 .undo {
-  padding: 3vw !important;
+  padding: 3% !important;
   color: #f5b748 !important;
 }
 .reject {
-  padding: 3vw !important;
+  padding: 3% !important;
   color: #ec5e6f !important;
 }
 .star {
-  padding: 3vw !important;
+  padding: 3% !important;
   color: #62b4f9 !important;
 }
 .match {
-  padding: 3vw !important;
+  padding: 3% !important;
   color: #76e2b3 !important;
 }
 .surge {
-  padding: 3vw !important;
+  padding: 3% !important;
   color: #915dd1 !important;
 }

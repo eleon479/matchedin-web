@@ -13,23 +13,21 @@ function Cards() {
   }, []);
 
   return (
-    <div>
-      <div className="CardsContainer">
-        {people.map((person) => (
-          <TinderCard
-            className="swipe"
-            key={person.name}
-            preventSwipe={['up', 'down']}
+    <div className="CardsContainer">
+      {people.map((person) => (
+        <TinderCard
+          className="swipe"
+          key={person.name}
+          preventSwipe={['up', 'down']}
+        >
+          <div
+            style={{ backgroundImage: `url(${person.url})` }}
+            className="Card"
           >
-            <div
-              style={{ backgroundImage: `url(${person.url})` }}
-              className="Card"
-            >
-              <h3>{person.name}</h3>
-            </div>
-          </TinderCard>
-        ))}
-      </div>
+            <h3>{person.name}</h3>
+          </div>
+        </TinderCard>
+      ))}
     </div>
   );
 }

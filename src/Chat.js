@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './Chat.css';
 import { db } from './services/firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+
 function Chat() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);

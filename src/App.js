@@ -1,10 +1,11 @@
 import './App.css';
 import Header from './Header';
 import { Routes, Route, Outlet } from 'react-router-dom';
+import { Container } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App" maxWidth="sm">
       {/* Header */}
       <Routes>
         <Route path="/" element={<Header />} />
@@ -13,7 +14,7 @@ function App() {
       </Routes>
 
       <Outlet />
-    </div>
+    </Container>
   );
 }
 

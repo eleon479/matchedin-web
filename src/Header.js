@@ -21,7 +21,11 @@ function Header({ backButton }) {
 
       <Link to="/">
         <IconButton>
-          <AcUnit className="header-icon" color="primary" fontSize="large" />
+          <AcUnit
+            className="header-icon"
+            sx={{ color: 'white' }}
+            fontSize="large"
+          />
         </IconButton>
       </Link>
 

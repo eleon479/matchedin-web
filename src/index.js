@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Inbox from './Inbox';
 import Chat from './Chat';
+import Register from './Register';
+import Login from './Login';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +17,8 @@ ReactDOM.render(
           <Route index element={<Home />} />
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/chat/:person" element={<Chat />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

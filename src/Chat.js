@@ -14,7 +14,6 @@ function Chat() {
   }, []);
 
   async function sendMessage(message) {
-    const t
     try {
       await addDoc(collection(db, 'messages'), {
         message: message,

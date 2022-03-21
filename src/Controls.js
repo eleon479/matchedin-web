@@ -5,7 +5,7 @@ import {
   Replay,
   StarRate,
 } from '@mui/icons-material';
-import { Container, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 import React from 'react';
 import './Controls.css';
 function Controls() {

@@ -1,4 +1,3 @@
-import { getAuth } from 'firebase/auth';
 import React, { useState } from 'react';
 
 function Login() {
@@ -14,7 +13,7 @@ function Login() {
     }
 
     // log user in
-    const auth = getAuth();
+    // const auth = getAuth();
   };
 
   return (

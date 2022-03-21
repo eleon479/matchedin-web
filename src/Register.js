@@ -1,6 +1,7 @@
 import { AcUnit, Email, Lock, Password } from '@mui/icons-material';
 import {
   AppBar,
+  Box,
   Button,
   Container,
   IconButton,
@@ -85,16 +86,6 @@ function Register() {
   return (
     <Container maxWidth="sm">
       <form className="register-form">
-        {/* <ToggleButtonGroup
-          color="primary"
-          value={currentToggle}
-          exclusive
-          onChange={handleToggleChange}
-        >
-          <ToggleButton value="register">Register</ToggleButton>
-          <ToggleButton value="login">Login</ToggleButton>
-        </ToggleButtonGroup> */}
-
         <AppBar
           color="transparent"
           position="static"
@@ -103,8 +94,6 @@ function Register() {
           <Tabs
             value={currentTab}
             onChange={handleTabChange}
-            // textColor="primary"
-            // indicatorColor="primary"
             variant="fullWidth"
           >
             <Tab label="Register" sx={{ fontWeight: 'bold' }} />
@@ -175,19 +164,37 @@ function Register() {
         ) : (
           <div className="field-set-container">
             <TextField
+              fullWidth
+              required
               label="Email"
               variant="outlined"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="login-field"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Email fontSize="medium" />
+                  </InputAdornment>
+                ),
+              }}
             />
             <TextField
+              fullWidth
+              required
               label="Password"
               variant="outlined"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="login-field"
               type="password"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Lock fontSize="medium" />
+                  </InputAdornment>
+                ),
+              }}
             />
             <Button
               className="login-button"
@@ -198,16 +205,16 @@ function Register() {
             </Button>
           </div>
         )}
-
+        <p className="auth-message">{error}</p>
+      </form>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <IconButton>
           <AcUnit
             className="header-icon"
-            color="primary"
-            sx={{ fontSize: 75 }}
+            sx={{ color: 'white', fontSize: 50 }}
           />
         </IconButton>
-        <p className="auth-message">{error}</p>
-      </form>
+      </Box>
     </Container>
   );
 }

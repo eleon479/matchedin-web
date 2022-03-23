@@ -11,7 +11,6 @@ import {
   TextField,
 } from '@mui/material';
 import { logEvent } from 'firebase/analytics';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';

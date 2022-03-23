@@ -1,9 +1,9 @@
 import { logEvent } from 'firebase/analytics';
 import React, { useEffect } from 'react';
-import Cards from './Cards';
-import Controls from './Controls';
+import Cards from '../Cards/Cards';
+import Controls from '../Controls/Controls';
 import './Home.css';
-import { analytics } from './services/firebase';
+import { analytics } from '../../services/firebase';
 
 function Home() {
   useEffect(() => {

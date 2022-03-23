@@ -1,6 +1,6 @@
 import React from 'react';
 import './Inbox.css';
-import MessagePreview from './MessagePreview';
+import MessagePreview from '../MessagePreview/MessagePreview';
 function Inbox() {
   return (
     <div className="Inbox">

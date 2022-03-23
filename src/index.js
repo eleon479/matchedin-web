@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
-import Chat from './Chat';
-import Home from './Home';
-import Inbox from './Inbox';
+import Chat from './components/Chat/Chat';
+import Home from './components/Home/Home';
+import Inbox from './components/Inbox/Inbox';
 import './index.css';
-import Register from './Register';
+import Register from './components/Register/Register';
 
 ReactDOM.render(
   <React.StrictMode>

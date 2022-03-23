@@ -19,7 +19,7 @@ import {
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.css';
-import { analytics } from './services/firebase';
+import { analytics } from '../../services/firebase';
 
 function Register() {
   const [currentTab, setCurrentTab] = useState(0);

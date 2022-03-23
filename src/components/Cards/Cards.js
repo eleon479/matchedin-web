@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import './Cards.css';
-import { db } from './services/firebase';
+import { db } from '../../services/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 
 function Cards() {

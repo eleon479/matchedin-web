@@ -1,7 +1,7 @@
 import { Avatar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import './Chat.css';
-import { db } from './services/firebase';
+import { db } from '../../services/firebase';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 
 function Chat() {

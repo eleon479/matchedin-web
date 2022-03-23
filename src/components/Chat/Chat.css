@@ -28,10 +28,11 @@
 
 .message-form {
   display: flex;
-  padding: 5px;
+  padding: 0;
   position: fixed;
   bottom: 0;
   width: 100%;
+  max-width: 600px;
   border-top: 1px solid lightgray;
 }
 
@@ -43,7 +44,7 @@
 
 .message-button {
   border: none;
-  margin: 20px;
+  padding: 20px;
   background-color: white;
   font-weight: bolder;
   color: #fe3d71;

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import './Cards.css';
 import { db } from './services/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 function Cards() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    db.collection('people').onSnapshot((snapshot) => {
-      setPeople(snapshot.docs.map((doc) => doc.data()));
+    getDocs(collection(db, 'people')).then((people) => {
+      setPeople(people.docs.map((person) => person.data()));
     });
   }, []);
 

@@ -10,20 +10,27 @@ import {
   Tabs,
   TextField,
 } from '@mui/material';
+import { logEvent } from 'firebase/analytics';
 import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.css';
+import { analytics } from './services/firebase';
+
 function Register() {
   const [currentTab, setCurrentTab] = useState(0);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('');
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    logEvent(analytics, 'load_register');
+  }, []);
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();

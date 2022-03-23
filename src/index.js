@@ -6,7 +6,6 @@ import Chat from './Chat';
 import Home from './Home';
 import Inbox from './Inbox';
 import './index.css';
-import Login from './Login';
 import Register from './Register';
 
 ReactDOM.render(
@@ -18,7 +17,6 @@ ReactDOM.render(
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/chat/:person" element={<Chat />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -2,15 +2,15 @@ import { Avatar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import './Chat.css';
 import { db } from './services/firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 
 function Chat() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    db.collection('messages').onSnapshot((snapshot) => {
-      setMessages(snapshot.docs.map((doc) => doc.data()));
+    getDocs(collection(db, 'messages')).then((messages) => {
+      setMessages(messages.docs.map((doc) => doc.data()));
     });
   }, []);
 

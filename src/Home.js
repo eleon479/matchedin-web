@@ -1,9 +1,16 @@
-import React from 'react';
+import { logEvent } from 'firebase/analytics';
+import React, { useEffect } from 'react';
 import Cards from './Cards';
 import Controls from './Controls';
 import './Home.css';
+import { analytics } from './services/firebase';
 
 function Home() {
+  useEffect(() => {
+    logEvent(analytics, 'load_home');
+    console.log('loaded home');
+  }, []);
+
   return (
     <>
       <Cards />

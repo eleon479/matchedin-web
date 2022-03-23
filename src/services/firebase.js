@@ -1,7 +1,7 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import 'firebase/compat/analytics';
-import 'firebase/compat/auth';
+import { getAnalytics } from 'firebase/analytics';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYpAh4xjo0b_w4RCWSr6-Oa1JT3LwfG1o',
@@ -13,9 +13,8 @@ const firebaseConfig = {
   measurementId: 'G-WSYK1DTSQW',
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-export const db = firebaseApp.firestore();
-export const analytics = firebaseApp.analytics();
-export const auth = firebaseApp.auth();
-
-analytics.setAnalyticsCollectionEnabled(true);
+// new
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const analytics = getAnalytics(app);

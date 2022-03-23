@@ -8,7 +8,6 @@ import { analytics } from '../../services/firebase';
 function Home() {
   useEffect(() => {
     logEvent(analytics, 'load_home');
-    console.log('loaded home');
   }, []);
 
   return (

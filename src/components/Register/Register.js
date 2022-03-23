@@ -11,15 +11,12 @@ import {
   TextField,
 } from '@mui/material';
 import { logEvent } from 'firebase/analytics';
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import { analytics } from '../../services/firebase';
+import { useAuth } from '../../context/auth';
 
 function Register() {
   const [currentTab, setCurrentTab] = useState(0);
@@ -27,6 +24,8 @@ function Register() {
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('');
   const [error, setError] = useState('');
+  const { createUser, login } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     logEvent(analytics, 'load_register');
@@ -43,8 +42,7 @@ function Register() {
     }
 
     // register new user
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
+    createUser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
@@ -52,6 +50,7 @@ function Register() {
         setPassword('');
         setPasswordRepeat('');
         setError('Account created!');
+        navigate('/');
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -72,12 +71,12 @@ function Register() {
     }
 
     // login this user
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
+    login(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
         setError('User signed in!');
+        navigate('/');
       })
       .catch((error) => {
         const errorCode = error.code;

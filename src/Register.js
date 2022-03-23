@@ -16,6 +16,7 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Register.css';
 function Register() {
   const [currentTab, setCurrentTab] = useState(0);
@@ -208,12 +209,14 @@ function Register() {
         <p className="auth-message">{error}</p>
       </form>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <IconButton>
-          <AcUnit
-            className="header-icon"
-            sx={{ color: 'white', fontSize: 50 }}
-          />
-        </IconButton>
+        <Link to="/">
+          <IconButton>
+            <AcUnit
+              className="header-icon"
+              sx={{ color: 'white', fontSize: 50 }}
+            />
+          </IconButton>
+        </Link>
       </Box>
     </Container>
   );
